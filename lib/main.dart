@@ -4,9 +4,15 @@ void main() {
   runApp(MaterialApp(home: Home()));
 }
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  var dolar = 07514490547;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,7 +90,11 @@ class Home extends StatelessWidget {
                         height: 35,
                       ),
                       RaisedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            dolar++;
+                          });
+                        },
                         color: Colors.amber[400],
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
@@ -123,15 +133,21 @@ class Home extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Gmail:   omermukhtar55@gmail.com",
-                        style: TextStyle(
-                          fontSize: 18,),),
+                        Text(
+                          "Gmail:   omermukhtar55@gmail.com",
+                          style: TextStyle(
+                            fontSize: 18,
+                          ),
+                        ),
                         SizedBox(
                           height: 10,
                         ),
-                        Text("Number:     07514490547",
-                        style: TextStyle(
-                          fontSize: 18,),),
+                        Text(
+                          "Number:  $dolar",
+                          style: TextStyle(
+                            fontSize: 18,
+                          ),
+                        ),
                       ],
                     ),
                     Column(
@@ -162,16 +178,21 @@ class Home extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("instagram:  omerrmukhtarr",
-                        style: TextStyle(
-                          fontSize: 18,
-                        ) ,),
+                        Text(
+                          "instagram:  omerrmukhtarr",
+                          style: TextStyle(
+                            fontSize: 18,
+                          ),
+                        ),
                         SizedBox(
                           height: 10,
                         ),
-                        Text("Github:       omerrmukhtarr",
-                        style: TextStyle(
-                          fontSize: 18,),)
+                        Text(
+                          "Github:       omerrmukhtarr",
+                          style: TextStyle(
+                            fontSize: 18,
+                          ),
+                        )
                       ],
                     ),
                     Column(
@@ -198,5 +219,19 @@ class Home extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class Myapp extends StatefulWidget {
+  const Myapp({Key? key}) : super(key: key);
+
+  @override
+  _MyappState createState() => _MyappState();
+}
+
+class _MyappState extends State<Myapp> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
